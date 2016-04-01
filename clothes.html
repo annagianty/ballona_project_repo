@@ -1,0 +1,371 @@
+﻿<!DOCTYPE>
+<html>
+    
+<head>
+    
+<title>Produk Baju Ballona</title>
+    
+<link rel=stylesheet type="text/css" href="product.css"> 
+<link href="ballona.css" rel="stylesheet">
+ 
+<!--bootstrap-->    
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- custom fonts -->
+ <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+<!-- js for product show -->  
+<script>
+var colCount = 0;
+var colWidth = 314;
+var margin = 10;
+var spaceLeft = 20;
+var windowWidth = 1000;
+var blocks = [];
+
+$(function(){
+	$(window).resize(setupBlocks);
+});
+
+function setupBlocks() {
+	windowWidth = $(window).width();
+	blocks = [];
+
+	// Calculate the margin so the blocks are evenly spaced within the window
+	colCount = Math.floor(windowWidth/(colWidth+margin*2));
+	spaceLeft = (windowWidth - ((colWidth*colCount)+(margin*(colCount-1)))) / 2;
+	console.log(spaceLeft);
+	
+	for(var i=0;i<colCount;i++){
+		blocks.push(margin);
+	}
+	positionBlocks();
+}
+
+function positionBlocks() {
+	$('.block').each(function(i){
+		var min = Array.min(blocks);
+		var index = $.inArray(min, blocks);
+		var leftPos = margin+(index*(colWidth+margin));
+		$(this).css({
+			'left':(leftPos+spaceLeft)+'px',
+			'top':min+'px'
+		});
+		blocks[index] = min+$(this).outerHeight()+margin;
+	});	
+}
+
+Array.min = function(array) {
+    return Math.min.apply(Math, array);
+};
+
+/*category filter*/    
+
+</script>
+   
+   
+<!-- for zoom -->
+   
+<link type="text/css" rel="stylesheet" media="all" href="css/jquery.zbox.css" />
+
+<script type="text/javascript" src="js/jquery.zbox.min.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      jQuery(document).ready(function(){
+        jQuery(".zb").zbox( { margin:40 } );
+      });
+      //]]>
+    </script>
+      
+</head>
+
+<body onload="setupBlocks();">
+
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">BALLONA TENUN TORAJA</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="clothes.html">Clothes</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="bags.html">Bags</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="accesories.html">Accessories</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#about">Story</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+ 
+ <!-- Header 
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="imagehome/ukiran.jpg" alt="">
+                    <div class="intro-text">
+                        <span class="name">Traditional Woven Fabrics</span>
+                        <hr class="star-light">
+                        <span class="skills">An elegant modification of Toraja traditional woven fabrics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> -->
+
+
+<!--products -->
+  
+<section id="portfolio">
+	<!-- <div class="container">  -->
+		<!-- <div class="row" >  -->
+			
+			<div id="product"> 
+    
+				<div class="block"> 
+					<a class="zb" rel="group" href="imageclothes/si.jpg" title="Contoh ZOOM">
+        			<img src="imageclothes/si.jpg">
+      				</a>    
+					<p>Sackdress</p>
+					<p><b> Rp 160.000</b> </p>
+   					 <p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button type="button" class="fa" data-toggle="modal" data-target="#myModal" > Detail </button>
+					
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+    
+				<div class="block">  
+					<a class="zb" rel="group" href="imageclothes/sarungpants.jpg" title="Sarung Pants">
+        			<img src="imageclothes/sarungpants.jpg">
+      				</a>  
+   					<p></p>
+   					<p>Sarung Pants </p>
+					<p><b> Rp 150.000</b> </p>
+   					<p></p>
+					<button class="beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Detail</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/roundneckshirt.jpg" title="Roundneck Shirt">
+        			<img src="imageclothes/roundneckshirt.jpg">
+      				</a>
+					<p></p>
+   					<p>Roundneckt Shirt</p>
+					<p><b> Rp 169.000</b> </p>
+  					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Detail </button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/sabrinablouse.jpg" title="Sabrina Blouse">
+        			<img src="imageclothes/sabrinablouse.jpg">
+      				</a>
+					<p></p>
+   					<p>Sabrina Blouse</p>
+					<p><b> Rp 169.000</b> </p>
+  					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i></i> Detail </button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/sleeveless.jpg" title="Sleeveless">
+        			<img src="imageclothes/sleeveless.jpg">
+      				</a>
+					<p></p>
+					<p>Sleeveless</p>
+					<p><b> Rp 100.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Detail </button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/sackdress1.jpg" title="Sackdress">
+        			<img src="imageclothes/sackdress1.jpg">
+      				</a>
+					<p></p>
+					<p>Sackdress Merah</p>
+					<p><b> Rp 169.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Detail </button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/blouse.jpg" title="Blouse">
+					<img src="imageclothes/blouse.jpg">
+					</a>
+					<p></p>
+					<p>Blouse</p>
+					<p><b> Rp 100.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Detail </button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/Kebaya.jpg" title="Kebaya">
+					<img src="imageclothes/Kebaya.jpg">
+					</a>
+					<p></p>
+					<p>Gray kebaya </p>
+					<p><b> Rp 250.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+				
+				
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/sleeveless.jpg" title="Sleeveless">
+        			<img src="imageclothes/sleeveless.jpg">
+      				</a>
+					<p></p>
+					<p>Sleeveless</p>
+					<p><b> Rp 100.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Detail </button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/sackdress1.jpg" title="Sackdress">
+        			<img src="imageclothes/sackdress1.jpg">
+      				</a>
+					<p></p>
+					<p>Sackdress Merah</p>
+					<p><b> Rp 169.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Detail </button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/blouse.jpg" title="Blouse">
+        			<img src="imageclothes/blouse.jpg">
+        			</a>
+					<p></p>
+					<p>Blouse</p>
+					<p><b> Rp 100.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Detail </button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<a class="zb" rel="group" href="imageclothes/Kebaya.jpg" title="Kebaya">
+					<img src="imageclothes/Kebaya.jpg">
+					</a>
+					<p></p>
+					<p>Gray kebaya </p>
+					<p><b> Rp 250.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				
+		    </div> <!--setupBlocks function end  --> 
+      	<!-- </div>  -->
+    
+     
+ </section>
+ 
+ 			<!-- Modal -->
+  						<div class="modal fade" id="myModal" role="dialog">
+    						<div class="modal-dialog"  class="detail">
+       				<!-- Modal content-->
+      							<div class="modal-content">
+        							<div class="modal-header">
+          								<button type="button" class="close" data-dismiss="modal">&times;</button>
+          								<h4 class="modal-title" >Detail Blouse</h4>
+        							</div>
+        							<div class="modal-body">
+	         							
+	         							<h5>Material</h5>
+	         							
+	         							<ul id="p-desc">
+											<li><b>Material:</b> Linen and Toraja weaven fabrics</li>
+											<li><b>Vuring:</b> Cotton fabric</li>
+											<li><b>Size available:</b> S M L</li>
+										</ul>
+																				
+										<h5>Payment</h5>	
+										
+										<ul id="p-desc">
+											<li><b>Bank:</b> ABC</li>
+											<li><b>Account Number:</b> 12345678 </li>
+											<li><b>Payee Name:</b> Ballona </li>
+										</ul>	
+																
+									</div>
+        							<div class="modal-footer">
+          							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        							</div>
+      							</div>
+    						</div>
+ 						 </div>		
+ 
+<!-- Footer 
+    <footer class="text-center">
+    	<div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <hr/>
+					<p style="text-align:center">BallonaTenunToraja &copy; 2016. All rights reserved.| 
+					<a href="https://www.facebook.com/profile.php?id=100011149479616" target="_blank" class="facebook">Facebook</a> |
+					<a href="https://www.instagram.com/ballona_tenun_toraja/" class="instagram" title="follow us" target="_blank">Instagram</a> </p>
+				</div>
+             </div>
+        </div>
+    </footer> -->
+
+</body>
+
+</html>

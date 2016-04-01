@@ -1,0 +1,299 @@
+﻿<!DOCTYPE>
+<html>
+    
+<head>
+    
+<title>Produk Accesories Ballona</title>
+    
+<link rel=stylesheet type="text/css" href="product.css"> 
+<link href="ballona.css" rel="stylesheet">
+ 
+    
+<!--google font    
+<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>     -->
+ 
+<!--bootstrap-->    
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--    
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/script-centered.js"></script>
+-->
+<!--font awesome
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  
+<!-- sticky navbar
+<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css" rel="stylesheet" type="text/css">    
+    
+<!-- js for product show -->  
+    
+<script>
+var colCount = 0;
+var colWidth = 314;
+var margin = 10;
+var spaceLeft = 20;
+var windowWidth = 1000;
+var blocks = [];
+
+$(function(){
+	$(window).resize(setupBlocks);
+});
+
+function setupBlocks() {
+	windowWidth = $(window).width();
+	blocks = [];
+
+	// Calculate the margin so the blocks are evenly spaced within the window
+	colCount = Math.floor(windowWidth/(colWidth+margin*2));
+	spaceLeft = (windowWidth - ((colWidth*colCount)+(margin*(colCount-1)))) / 2;
+	console.log(spaceLeft);
+	
+	for(var i=0;i<colCount;i++){
+		blocks.push(margin);
+	}
+	positionBlocks();
+}
+
+function positionBlocks() {
+	$('.block').each(function(i){
+		var min = Array.min(blocks);
+		var index = $.inArray(min, blocks);
+		var leftPos = margin+(index*(colWidth+margin));
+		$(this).css({
+			'left':(leftPos+spaceLeft)+'px',
+			'top':min+'px'
+		});
+		blocks[index] = min+$(this).outerHeight()+margin;
+	});	
+}
+
+Array.min = function(array) {
+    return Math.min.apply(Math, array);
+};
+
+/*category filter*/    
+
+</script>
+        
+</head>
+
+<body onload="setupBlocks();">
+
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">BALLONA TENUN TORAJA</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="clothes.html">Clothes</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="bags.html">Bags</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="accesories.html">Accessories</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#about">Story</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+ <!-- Header 
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="imagehome/ukiran.jpg" alt="">
+                    <div class="intro-text">
+                        <span class="name">Traditional Woven Fabrics</span>
+                        <hr class="star-light">
+                        <span class="skills">An elegant modification of Toraja traditional woven fabrics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> -->
+
+
+<!--products -->
+<section id="portfolio">
+	<!-- <div class="container">
+		<div class="row" >  -->
+			
+			<div id="product"> 
+    			<div class="block">    
+					<img src="imageaccesories/longscarf.jpg" height="40%">
+					<p></p>
+					<p>Long scarf</p>
+					<p><b> Rp 100.000</b> </p>
+					 <p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+    
+				<div class="block">    
+					<img src="imageaccesories/shawl.jpeg">
+					<p></p>
+					<p>Shawl </p>
+					<p><b> Rp 125.000</b> </p>
+					<p></p>
+					<button class="beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<img src="imageaccesories/bracelet.jpg">
+					 <p></p>
+					 <p>Bracelet</p>
+					<p><b> Rp 80.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<img src="imageaccesories/menwallet.jpg">
+					<p></p>
+					<p>Wallet</p>
+					<p><b> Rp 169.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<img src="imageaccesories/pasportcase.jpg">
+					<p></p>
+					<p>Passport case</p>
+					<p><b> Rp 120.000</b> </p>
+					<p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+
+				<div class="block">    
+					<img src="imageaccesories/bantal.jpg">
+					<p></p>
+					<p>Chusion</p>
+					<p><b> Rp 100.000</b> </p>
+					 <p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+					
+				<div class="block">    
+					<img src="imageaccesories/tablerunner.jpg">
+					<p></p>
+					<p>Table Runner</p>
+					<p><b> Rp 75.000</b> </p>
+					 <p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+					
+				<div class="block">    
+					<img src="imageaccesories/bowtie.jpg">
+					<p></p>
+					 <p>Bow Tie </p>
+					<p><b> Rp 250.000</b> </p>
+					 <p></p>
+					<button class= "beli"><i class="fa fa-shopping-cart"></i> Beli</button>
+					<button><i class="fa fa-heart"></i> Suka</button>
+					<button><i class="fa fa-share"></i> Bagikan</button>
+				</div>
+			</div>    <!--setupBlocks function end   -->   
+ 		<!-- </div>
+      </div>  -->
+ </section>
+ 
+<!-- 
+ <div class="container">
+
+	<div id="wrapfooterku">
+		<div id="footer1" >
+		<hr/>
+		<p style="text-align:center">BallonaTenunToraja &copy; 2016. All rights reserved.| 
+		<a href="https://www.facebook.com/profile.php?id=100011149479616" target="_blank" class="facebook">Facebook</a> |
+		<a href="https://www.instagram.com/ballona_tenun_toraja/" class="instagram" title="follow us" target="_blank">Instagram</a> </p>
+		</div>
+	</div>
+ </div>   
+ -->
+ 
+ <!-- About Section 
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="#" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Download Theme
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+   <!-- Footer 
+    <footer class="text-center">
+    	 
+       <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <hr/>
+					<p style="text-align:center">BallonaTenunToraja &copy; 2016. All rights reserved.| 
+					<a href="https://www.facebook.com/profile.php?id=100011149479616" target="_blank" class="facebook">Facebook</a> |
+					<a href="https://www.instagram.com/ballona_tenun_toraja/" class="instagram" title="follow us" target="_blank">Instagram</a> </p>
+				</div>
+             </div>
+        </div>
+    </footer> --> 
+    
+</body>
+
+</html>
